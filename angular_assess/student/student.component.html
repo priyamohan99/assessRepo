@@ -1,0 +1,28 @@
+<p>student works!</p>
+<button type = "button" (click)="get()">Get</button> &nbsp; &nbsp;
+
+<button type="button" (click) ="post()">Post</button> &nbsp; &nbsp;
+<button type="button" (click) ="put()">Put</button> &nbsp; &nbsp;
+<button type="button" (click) ="delete()">Delete</button> &nbsp; &nbsp; 
+<table class="container" *ngIf="studentData !=''">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Grade</th>
+            <th>Course</th>
+            <th>Address</th>
+            <th>Ph No</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let item of studentData | async">
+            <td>{{item.StudentId}}</td>
+            <td>{{item.StudentName}}</td>
+            <td>{{item.StudentGrade}}</td>
+            <td>{{item.Course}}</td>
+            <td>{{item.Address}}</td>
+            <td>{{item.Phno}}</td>
+        </tr>
+    </tbody>
+</table>
